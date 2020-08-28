@@ -4,15 +4,21 @@
 
 import { combineReducers } from 'redux'
 
-function XXX(state = 0, action) {
-  return state
-}
+import { AUTH_SUCCESS, ERROR_MSG } from "./action-types";
 
-function YYY(state = 0, action) {
-  return state
+const initUser = { username: '', type: '', msg: '' }
+
+function user(state = initUser, action) {
+  switch (action.type) {
+    case AUTH_SUCCESS:
+      return {...state, ...action.data}
+    case ERROR_MSG:
+      return {...state, msg: action.data}
+    default:
+      return state
+  }
 }
 
 export default combineReducers({
-  XXX,
-  YYY
+  user
 })
