@@ -13,6 +13,6 @@ export default function ajax(url, data={}, type='GET') {
     }
     return axios.get(url + '?' + paramStr)
   } else {
-    return axios.post(data)
+    return axios.post(url, data)
   }
 }

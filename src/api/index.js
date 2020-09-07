@@ -1,4 +1,4 @@
-const ajax = require('./ajax')
+import ajax from './ajax'
 
 export const reqRegister = user => ajax('/register', user, 'POST')
 
